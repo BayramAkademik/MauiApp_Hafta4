@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp_Hafta4.UserDetails"
+             Title="Kişi Bilgileri"
+             >
+
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        
+    <VerticalStackLayout>
+        <Border Margin="20">
+            <StackLayout >
+
+                <Image Source="{Binding ImageLink}" HeightRequest="200"/>
+                <Button Text="Resim Seç"
+                Background="Transparent"
+                TextColor="Blue"
+                Clicked="SelectImageClick"/>
+
+            </StackLayout>
+        </Border>
+
+
+        <Grid Margin="10"
+        RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+        ColumnDefinitions="Auto,*"
+        ColumnSpacing="10"
+          RowSpacing="5"
+              BackgroundColor="AliceBlue"
+        >
+            <Label Text="Adı:" Grid.Column="0"/>
+            <Entry Placeholder="Adı" Grid.Column="1"
+                   Text="{Binding Name}"/>
+
+            <Label Text="Soyadı:" 
+               Grid.Column="0"
+               Grid.Row="1"/>
+            <Entry Placeholder="Soyadı"
+               Grid.Column="1"
+               Grid.Row="1"
+                   Text="{Binding Surname}"/>
+
+            <Label Text="Telefon:" 
+               Grid.Column="0"
+               Grid.Row="2"/>
+            <Entry Placeholder="Telefon"
+               Grid.Column="1"
+               Grid.Row="2"
+               Keyboard="Telephone"
+               Text="{Binding Phone}"/>
+
+            <Label Text="Mail:" 
+               Grid.Column="0"
+               Grid.Row="3"/>
+            <Entry Placeholder="Mail"
+               Grid.Column="1"
+               Grid.Row="3"
+               Keyboard="Email"
+               Text="{Binding Email}"/>
+
+            <Label Text="Adres:" 
+               Grid.Column="0"
+               Grid.Row="4"/>
+            <Editor Placeholder="Adres"
+               Grid.Column="1"
+               Grid.Row="4" 
+               AutoSize="TextChanges"
+               Text="{Binding Adress}"/>
+        </Grid>
+
+        <HorizontalStackLayout 
+            HorizontalOptions="End" 
+            Margin="20" 
+            Spacing="20">
+            <Button Text="Tamam"
+                    Clicked="OkClicked"
+                    WidthRequest="100"/>
+            <Button Text="İptal" WidthRequest="100"/>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

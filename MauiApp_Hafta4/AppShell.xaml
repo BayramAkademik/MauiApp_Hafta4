@@ -4,12 +4,26 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiApp_Hafta4"
-    Shell.FlyoutBehavior="Disabled"
+    Shell.FlyoutBehavior="Flyout"
     Title="MauiApp_Hafta4">
 
     <ShellContent
-        Title="Home"
+        Icon="home.png"
+        Title="Ana Sayfa"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+
+    <ShellContent
+        Icon="contacts.png"
+        Title="Kişiler"
+        ContentTemplate="{DataTemplate local:UsersPage}"
+        Route="UsersPage" />
+
+    <ShellContent
+        Icon="contact.png"
+        Title="Kişi Bilgileri"
+        ContentTemplate="{DataTemplate local:UserDetails}"
+        Route="UserDetails" />
+
 
 </Shell>

@@ -3,12 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp_Hafta4.LoginPage"
              Title="LoginPage">
-    <VerticalStackLayout Background="WhiteSmoke">
+    <VerticalStackLayout Background="WhiteSmoke" >
 
         <VerticalStackLayout 
             Background="AliceBlue" 
             Margin="20"
-            Spacing="10">
+            Spacing="10"
+            IsVisible="True"
+            x:Name="loginStack">
 
             <Label 
                     Text="Oturum açmak için kullanıcı adı ve şifrenizi giriniz:"
@@ -18,17 +20,21 @@
             <Entry Placeholder="şifre"
                IsPassword="True"/>
 
-            <Button Text="Login"/>
+            <Button Text="Login"
+                    Clicked="LoginClicked"/>
             <Button Text="Hesabınız yoksa kaydolun"
                     Background="Transparent"
-                    TextColor="Blue"/>
+                    TextColor="Blue"
+                    Clicked="VisibleChange_Click"/>
 
         </VerticalStackLayout>
 
         <VerticalStackLayout 
             Background="White"
             Margin="20"
-            Spacing="10">
+            Spacing="10"
+            IsVisible="False"
+            x:Name="kayitStack">
             <Label Text="Kaydolmak için kullanıcı bilgilerinizi giriniz:"
                    HorizontalOptions="Center" />
 
@@ -38,7 +44,8 @@
             <Button Text="Kaydol"/>
             <Button Text="Zaten bir hesabınız varsa oturum açın"
                     Background="Transparent"
-                    TextColor="Blue" />
+                    TextColor="Blue"
+                    Clicked="VisibleChange_Click"/>
         </VerticalStackLayout>
 
     </VerticalStackLayout>

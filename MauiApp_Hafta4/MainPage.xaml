@@ -10,19 +10,22 @@
             <Image
                 Source="dotnet_bot.png"
                 HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" />
+                BindingContext="{x:Reference slider1}"
+                Scale="{Binding Path=Value}"/>
 
             <Label
                 Text="Hello, World!"
                 Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
+                              
+                BindingContext="{x:Reference slider2}"
+                FontSize="{Binding Path=Value}"/>
+
 
             <Label
                 Text="Welcome to &#10;.NET Multi-platform App UI"
                 Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+                BindingContext="{x:Reference stepper1}"
+                FontSize="{Binding Path=Value}"/>
 
             <Button
                 x:Name="CounterBtn"
@@ -30,6 +33,25 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
+
+            <Slider x:Name="slider1" Minimum="0.5" Maximum="5"
+                    MinimumTrackColor="Green"
+                    MaximumTrackColor="Red"
+                    ThumbColor="Green"/>
+            <Label BindingContext="{x:Reference slider1}"
+                   Text="{Binding Path=Value, StringFormat='{0:F2}'}"/>
+
+            <Slider x:Name="slider2" Minimum="10" Maximum="100"
+                    MinimumTrackColor="Green"/>
+            <Label BindingContext="{x:Reference slider2}"
+                   Text="{Binding Path=Value, StringFormat='{0:F2}'}"/>
+
+            <Stepper x:Name="stepper1" Increment="5" Value="0"
+                     Minimum="10" Maximum="100"/>
+            <Label BindingContext="{x:Reference stepper1}"
+                   Text="{Binding Path=Value}"/>
+
+
         </VerticalStackLayout>
     </ScrollView>
 
