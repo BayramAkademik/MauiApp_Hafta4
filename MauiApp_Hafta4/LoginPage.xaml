@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp_Hafta4.LoginPage"
+             Title="LoginPage">
+    <VerticalStackLayout Background="WhiteSmoke">
+
+        <VerticalStackLayout 
+            Background="AliceBlue" 
+            Margin="20"
+            Spacing="10">
+
+            <Label 
+                    Text="Oturum açmak için kullanıcı adı ve şifrenizi giriniz:"
+                    HorizontalOptions="Center" />
+
+            <Entry Placeholder="kullanıcı adı(mail)"/>
+            <Entry Placeholder="şifre"
+               IsPassword="True"/>
+
+            <Button Text="Login"/>
+            <Button Text="Hesabınız yoksa kaydolun"
+                    Background="Transparent"
+                    TextColor="Blue"/>
+
+        </VerticalStackLayout>
+
+        <VerticalStackLayout 
+            Background="White"
+            Margin="20"
+            Spacing="10">
+            <Label Text="Kaydolmak için kullanıcı bilgilerinizi giriniz:"
+                   HorizontalOptions="Center" />
+
+            <Entry Placeholder="Adı Soyadı"/>
+            <Entry Placeholder="Mail Adresi"/>
+            <Entry Placeholder="Şifre" IsPassword="True"/>
+            <Button Text="Kaydol"/>
+            <Button Text="Zaten bir hesabınız varsa oturum açın"
+                    Background="Transparent"
+                    TextColor="Blue" />
+        </VerticalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>
